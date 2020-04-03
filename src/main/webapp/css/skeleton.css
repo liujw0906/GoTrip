@@ -520,13 +520,15 @@ ul.social-share li a:hover {
 }
 
 #global_navi ul li {
-    width: 16.6%;
+    width: 20.6%;
+    font-family: 微软雅黑;
     float: left;
+    font-size: 24px;
     text-align: center;
     -webkit-writing-mode: vertical-rl; /* 実装済 */
     -moz-writing-mode: vertical-rl; /* 未実装 */
     -ms-writing-mode: tb-rl; /* 実装済 */
-    writing-mode: vertical-rl;
+    writing-mode:  horizontal-tb;
 }
 
 #global_navi ul li a {

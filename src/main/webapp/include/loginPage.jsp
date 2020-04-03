@@ -82,7 +82,7 @@ $(function(){
 	}
 	body{
 		font-size: 12px;
-		font-family: Arial;
+		font-family: '微软雅黑';
 	}
 	a{
 		color:#999;

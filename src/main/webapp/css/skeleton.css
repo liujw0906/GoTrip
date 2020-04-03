@@ -53,7 +53,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     .container {
         width: 85%;
         padding: 0;
-    };
+    }
 }
 
   /* For devices larger than 550px */
@@ -203,7 +203,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     .offset-by-one-half.column,
     .offset-by-one-half.columns {
         margin-left: 52%;
-    };
+    }
 }
 
 
@@ -222,7 +222,7 @@ body {
  /* currently ems cause chrome bug misinterpreting rems on body element */
     line-height: 1.6;
     font-weight: 400;
-    font-family: "游明朝","YuMincho","ヒラギノ明朝 Pro W3","Hiragino Mincho Pro","HiraMinProN-W3","HGS明朝E","ＭＳ Ｐ明朝",serif;
+    font-family: "微软雅黑";
     color: #4e4e4e;
 }
 
@@ -295,7 +295,7 @@ h6 {
 
     h6 {
         font-size: 1.5rem;
-    };
+    }
 }
 
 p {
@@ -521,7 +521,7 @@ ul.social-share li a:hover {
 
 #global_navi ul li {
     width: 20.6%;
-    font-family: 微软雅黑;
+    font-family: '微软雅黑';
     float: left;
     font-size: 24px;
     text-align: center;
@@ -1113,7 +1113,7 @@ address {
     100% {
         opacity: 1;
         -webkit-transform: translateY(0);
-    };
+    }
 }
 
 @keyframes fadeInDown {
@@ -1129,7 +1129,7 @@ address {
         -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
         transform: translateY(0);
-    };
+    }
 }
 
 /* about

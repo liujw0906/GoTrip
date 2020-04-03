@@ -49,7 +49,7 @@
 
 	<form action="foresearch" method="post" >
 		<div class="searchDiv1" align="center">
-			<input name="keyword" type="text" value="${param.keyword}" placeholder="派大星的小屋 ">
+			<input name="keyword" type="text" value="${param.keyword}" placeholder="郑姑娘的小站">
 			<button  type="submit" class="${pageContext.request.contextPath}/searchButton">搜索</button>
 		</div>
 	</form>

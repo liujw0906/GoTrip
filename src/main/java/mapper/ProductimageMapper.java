@@ -39,4 +39,7 @@ public interface ProductimageMapper {
     int updateByPrimaryKeySelective(Productimage record);
 
     int updateByPrimaryKey(Productimage record);
+
+    @Select("select * from ProductImage where pid = #{pid} order by id desc limit 1")
+    Productimage selectByPidLimit(@Param("pid")Integer pid);
 }

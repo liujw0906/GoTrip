@@ -28,8 +28,9 @@ public class ProductService implements ProductInt {
     CategoryMapper categoryMapper;
     @Autowired
     PropertyvalueMapper propertyvalueMapper;
+
     @Override
-    public Product getProduct(Integer id){
+    public Product getProduct(Integer id) {
         List<Productimage> productSingleImages = productimageMapper.list(id, "type_single");
         List<Productimage> productDetailImages = productimageMapper.list(id, "type_detail");
         Product p = productMapper.selectByPrimaryKey(id);
@@ -42,32 +43,37 @@ public class ProductService implements ProductInt {
         p.setCategory(categoryMapper.selectByPrimaryKey(p.getCid()));
         return p;
     }
+
     @Override
-    public void update(Product product){
+    public void update(Product product) {
         productMapper.updateByPrimaryKey(product);
     }
+
     @Override
-    public void insert(Product product){
+    public void insert(Product product) {
         productMapper.insert(product);
     }
+
     @Override
-    public void delete(int id){
+    public void delete(int id) {
         productMapper.deleteByPrimaryKey(id);
     }
+
     @Override
-    public List<Product> listProducts(int cid){
+    public List<Product> listProducts(int cid) {
         List<Product> ps = productMapper.selectByCid(cid);
         return getProducts(ps);
     }
+
     @Override
-    public List<Product> listProducts(String keyword){
-        keyword = "%"+keyword+"%";
+    public List<Product> listProducts(String keyword) {
+        keyword = "%" + keyword + "%";
         List<Product> ps = productMapper.selectByName(keyword);
         return getProducts(ps);
     }
 
     private List<Product> getProducts(List<Product> ps) {
-        for(Product p:ps){
+        for (Product p : ps) {
             p.setFirstProductImage(productimageMapper.selectOneByPid(p.getId()));
             p.setReviewCount(reviewMapper.countByPid(p.getId()));
 
@@ -76,40 +82,65 @@ public class ProductService implements ProductInt {
     }
 
     @Override
-    public List<Propertyvalue> listProprotyValue(int product_id){
+    public List<Propertyvalue> listProprotyValue(int product_id) {
         return propertyvalueMapper.list(product_id);
     }
+
     @Override
-    public List<Property> listProproty(int cid){
+    public List<Property> listProproty(int cid) {
         return propertyMapper.selectByCid(cid);
     }
+
     @Override
-    public Property getProperty(int id){
+    public Property getProperty(int id) {
         Property property = propertyMapper.selectByPrimaryKey(id);
         property.setCategory(categoryMapper.selectByPrimaryKey(property.getCid()));
         return property;
     }
+
     @Override
-    public void deleteProperty(int id){
+    public void deleteProperty(int id) {
         propertyMapper.deleteByPrimaryKey(id);
     }
 
     @Override
-    public void updateProperty(Property record){
+    public void updateProperty(Property record) {
         propertyMapper.updateByPrimaryKey(record);
     }
+
     @Override
-    public List<Productimage> listProductImage(int product_id){
+    public List<Productimage> listProductImage(int product_id) {
         return productimageMapper.selectByPid(product_id);
     }
 
     @Override
-    public void newProperty(Property record){
+    public void newProperty(Property record) {
         propertyMapper.insert(record);
     }
 
     @Override
-    public void updatePropertyValue(int id, String value){
+    public void updatePropertyValue(int id, String value) {
         propertyvalueMapper.updateValue(id, value);
+    }
+
+    @Override
+    public Productimage getProductImageById(Integer id) {
+        return productimageMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public void admin_productImage_delete(Integer id) {
+        productimageMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public void insertProductImage(Productimage productimage) {
+       productimageMapper.insert(productimage);
+    }
+
+    @Override
+    public int getLastImage(Integer pid) {
+        Productimage productimage = productimageMapper.selectByPidLimit(pid);
+        return productimage.getId();
     }
 }

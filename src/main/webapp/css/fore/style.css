@@ -1087,11 +1087,17 @@ div.productReviewDiv {
 div.buyPageDiv {
 	margin: 20px auto;
 	max-width: 1013px;
+	padding-top: 50px;
 }
 
 div.buyDiv {
 	margin: 20px auto;
 	text-align: center;
+}
+
+.productList{
+	width: 1013px;
+	margin: 0 auto;
 }
 
 div.buyPageDiv button {
@@ -1339,8 +1345,9 @@ span.leaveMessageTextareaSpan {
 }
 
 div.orderItemTotalSumDiv {
-	margin: 40px;
+	margin: 40px auto;
 	height: 40px;
+	width: 1013px;
 }
 
 div.orderItemTotalSumDiv span {
@@ -1356,7 +1363,8 @@ span.orderItemTotalSumSpan {
 
 div.submitOrderDiv {
 	height: 40px;
-	margin: 20px 0px;
+	margin: 20px auto;
+	width: 1013px;
 }
 
 button.submitOrderButton {
@@ -1631,7 +1639,7 @@ div.cartFoot button {
 
 div.boughtDiv {
 	max-width: 1013px;
-	margin: 10px auto;
+	margin: 50px auto;
 }
 
 div.orderType div.selectedOrderType {
@@ -2119,7 +2127,7 @@ table.makeReviewTable td {
 table.makeReviewTable textarea {
 	border-width: 0px;
 	resize: none;
-	width: 420px;
+	width: 800px;
 	height: 120px;
 }
 
@@ -2134,13 +2142,13 @@ div.makeReviewButtonDiv {
 }
 
 div.makeReviewButtonDiv button {
-	width: 72px;
-	height: 26px;
-	border-radius: 2px;
-	background-color: #C40000;
-	color: white;
-	border-width: 0px;
-	font-weight: bold;
+	/*width: 72px;*/
+	/*height: 26px;*/
+	/*border-radius: 2px;*/
+	/*background-color: #C40000;*/
+	/*color: white;*/
+	/*border-width: 0px;*/
+	/*font-weight: bold;*/
 }
 
 div.registerDiv {

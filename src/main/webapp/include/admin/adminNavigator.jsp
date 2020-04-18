@@ -31,7 +31,7 @@
 			<div class="row">
 				<div class="three columns">
 					<div id="mobile-head">
-						<h1 id="title"><a href="${pageContext.request.contextPath}/home"><img src="${pageContext.request.contextPath}/images/logo.png" alt="GoTrip" ></a></h1>
+						<h1 id="title"><a href="${pageContext.request.contextPath}/home"><img src="${pageContext.request.contextPath}/images/logo.png" width="70" alt="GoTrip" ></a></h1>
 						<div id="nav-toggle">
 							<div>
 								<span></span>

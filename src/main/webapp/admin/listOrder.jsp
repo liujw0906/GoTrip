@@ -50,12 +50,11 @@ $(function(){
 					最高金额：<input name="max" type="number" class="common-input">
 				</div>
 			</div>
-
-		</div>
-		<div class="Connection">
-			<div class="cell-left">
-				<input type="hidden" name="id" value="${o.id}">
-				<button type="submit" class="btn btn-success" style="margin: 0px">提 交</button>
+			<div class="Connection">
+				<div class="cell-left">
+					<input type="hidden" name="id" value="${o.id}">
+					<button type="submit" class="btn btn-success" style="margin: 0px">提 交</button>
+				</div>
 			</div>
 		</div>
 		</table>

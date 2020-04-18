@@ -437,6 +437,8 @@ div.simpleLogo {
 img.loginBackgroundImg {
 	display: block;
 	margin: 0px auto;
+	background-size: cover;
+	width: 100%;
 }
 
 div.loginDivInProductPageModalDiv {
@@ -938,8 +940,9 @@ div.infoInimgAndInfo span.serviceCommitmentLink a {
 }
 
 div.productDetailDiv {
-	width: 790px;
+	width: 1000px;
 	margin: 40px auto;
+	border: 1px solid #DFDFDF
 }
 
 div.productReviewDiv {
@@ -961,7 +964,6 @@ div.productReviewTopPart {
 }
 
 div.productParamterPart {
-	border: 1px solid #DFDFDF;
 	padding: 40px;
 }
 
@@ -1033,7 +1035,8 @@ span.productReviewTopReviewLinkNumber {
 }
 
 div.productDetailImagesPart img {
-	display: block; margin 20px 0px;
+	display: block;
+	margin: 20px auto;
 	width: 790px;
 }
 

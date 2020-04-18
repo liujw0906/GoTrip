@@ -64,7 +64,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
     .column,
     .columns {
-        margin-left: 4%;
+        margin-left: 0%;
     }
 
     .column:first-child,
@@ -520,7 +520,7 @@ ul.social-share li a:hover {
 }
 
 #global_navi ul li {
-    width: 20.6%;
+    width: 20%;
     font-family: '微软雅黑';
     float: left;
     font-size: 24px;
@@ -538,6 +538,9 @@ ul.social-share li a:hover {
     color: #454545;
     text-decoration: none;
     transition: background-color 0.2s linear;
+    white-space: nowrap;
+    font-size: 16px!important;
+    font-weight: bold!important;
 }
 
 #global_navi ul li.current a {
@@ -1035,6 +1038,12 @@ form {
 
 #title {
     margin-top: 20px;
+    position: relative;
+}
+
+#title img{
+    position: absolute;
+    right: 0;
 }
 
 .waku img {

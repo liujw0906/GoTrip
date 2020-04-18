@@ -425,3 +425,11 @@ td,
 th {
   padding: 0;
 }
+
+.slider img{
+  width: 100%;
+}
+
+#concept{
+  margin-top: 70px;
+}

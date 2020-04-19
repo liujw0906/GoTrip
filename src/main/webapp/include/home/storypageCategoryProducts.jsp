@@ -87,7 +87,7 @@
                 <c:forEach items="${c.products}" var="p" varStatus="st">
                     <c:if test="${st.count<=5}">
                         <div class="storyProductItem" >
-                            <a href="foreproduct?pid=${p.id}"><img width="100px" src="img/productSingle_middle/${p.firstProductImage.id}.jpg"></a>
+                            <a href="foreproduct?pid=${p.id}"><img width="100px" src="img/productSingle/${p.firstProductImage.id}.jpg"></a>
                             <a class="storyProductItemDescLink" href="foreproduct?pid=${p.id}">
 								<span class="storyProductItemDesc">[强烈推荐]
 								${fn:substring(p.name, 0, 20)}

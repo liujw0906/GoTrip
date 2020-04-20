@@ -94,27 +94,39 @@ public class AdminController {
     //特别注意，由于本操作涉及图片保存，更换运行环境是需要重新配置路径
     @RequestMapping(value = "/admin_category_add", produces = "text/html;charset=UTF-8")
     @ResponseBody
-    public ModelAndView admin_category_add(@RequestParam("name") String name, @RequestParam("filepath") MultipartFile filepath) throws IOException {
+    public ModelAndView admin_category_add(HttpServletRequest re, @RequestParam("name") String name,
+                                           @RequestParam("filepath") MultipartFile filepath) throws IOException {
+        String uri = re.getSession().getServletContext().getRealPath("/");
         Category category = new Category();
         category.setName(name);
         Integer cid = categoryService.insert(category);
-//        String path1 = "D:\\WorkSpace-Idea\\zheng\\GoTrip\\target\\Gotrip\\img\\category\\" + cid.toString() + ".jpg";
-        String path1 = "/mnt/workspace/apache-tomcat-8.5.42/webapps/Gotrip/img/category/" + cid.toString() + ".jpg";
+        String p = System.getProperty("file.separator");
+        String path1 = uri + p + "img" + p + "category" + p + cid.toString() + ".jpg";
+        logger.error("房间分类图片保存路径：{}" + path1);
+//        String path1 = "/mnt/workspace/apache-tomcat-8.5.42/webapps/Gotrip/img/category/" + cid.toString() + ".jpg";
         filepath.transferTo(new File(path1));
 //        FileUtils.copyFile(new File(path1), new File(path2));
         mav = listCategory();
         return mav;
     }
+
     @RequestMapping(value = "/admin_category_update", produces = "text/html;charset=UTF-8")
     @ResponseBody
-    public ModelAndView admin_category_update(@RequestParam("name") String name, @RequestParam("id") Integer id,@RequestParam("filepath") MultipartFile filepath) throws IOException {
-    	Category category = categoryService.getCategory(id);
-    	category.setName(name);
-    	categoryService.update(category);
-    	String path1 = "/mnt/workspace/apache-tomcat-8.5.42/webapps/Gotrip/img/category/" + category.getId().toString() + ".jpg";
-    	filepath.transferTo(new File(path1));
-    	mav = listCategory();
-    	return mav;
+    public ModelAndView admin_category_update(HttpServletRequest re, @RequestParam("name") String name,
+                                              @RequestParam("id") Integer id, @RequestParam("filepath") MultipartFile filepath) throws IOException {
+        Category category = categoryService.getCategory(id);
+        category.setName(name);
+        String uri = re.getSession().getServletContext().getRealPath("/");
+        categoryService.update(category);
+        if (filepath != null) {
+            String p = System.getProperty("file.separator");
+//            String path1 = "/mnt/workspace/apache-tomcat-8.5.42/webapps/Gotrip/img/category/" + category.getId().toString() + ".jpg";
+            String path1 = uri + p + "img" + p + "category" + p + category.getId().toString() + ".jpg";
+            logger.error("房间分类图片保存路径：{}" + path1);
+            filepath.transferTo(new File(path1));
+        }
+        mav = listCategory();
+        return mav;
     }
 
     //查询所有订单
@@ -516,7 +528,7 @@ public class AdminController {
     @RequestMapping(value = "/admin_productImage_add", produces = "text/html;charset=UTF-8")
     @ResponseBody
     public ModelAndView admin_productImage_add(HttpServletRequest re, @RequestParam(value = "filepath") MultipartFile file, Integer pid, String type) {
-
+        String p = System.getProperty("file.separator");
         //保存图片对象
         Productimage productimage = new Productimage();
         productimage.setPid(pid);
@@ -525,11 +537,11 @@ public class AdminController {
         int id = productService.getLastImage(pid);
         String uri = re.getSession().getServletContext().getRealPath("/");
 
-        String path = uri + "/img";
+        String path = uri + "img";
         if ("type_single".equals(type)) {
-            path += "/productSingle/";
+            path += p + "productSingle" + p;
         } else {
-            path += "/productDetail/";
+            path += p + "productDetail" + p;
         }
 //        String path = uri + "\\img";
 //        if ("type_single".equals(type)) {

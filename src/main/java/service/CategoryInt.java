@@ -16,4 +16,6 @@ public interface CategoryInt {
     void delete(int id);
 
     Integer insert(Category category);
+    
+    void update(Category category);
 }

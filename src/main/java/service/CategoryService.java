@@ -49,4 +49,9 @@ public class CategoryService implements CategoryInt {
 	public Category getCategoryByName(String name) {
 		return categoryMapper.getCategoryByName(name);
 	}
+	
+	@Override
+	public void update(Category category) {
+		jdbcTemplate.execute(" update category set name = '"+category.getName()+"' where id = " + category.getId());
+	}
 }

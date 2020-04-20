@@ -107,12 +107,12 @@ public class AdminController {
     }
     @RequestMapping(value = "/admin_category_update", produces = "text/html;charset=UTF-8")
     @ResponseBody
-    public ModelAndView admin_category_update(@RequestParam("name") String name, @RequestParam("filepath") MultipartFile filepath) throws IOException {
-    	Category category = categoryService.getCategoryByName(name);
-    	Integer id =category.getId();
+    public ModelAndView admin_category_update(@RequestParam("name") String name, @RequestParam("name") Integer id,@RequestParam("filepath") MultipartFile filepath) throws IOException {
+    	Category category = categoryService.getCategory(id);
     	category.setName(name);
-//    	String path1 = "D:\\WorkSpace-Idea\\zheng\\GoTrip\\target\\Gotrip\\img\\category\\" + id.toString() + ".jpg";
-//    	filepath.transferTo(new File(path1));
+    	categoryService.update(category);
+    	String path1 = "/mnt/workspace/apache-tomcat-8.5.42/webapps/Gotrip/img/category/" + category.getId().toString() + ".jpg";
+    	filepath.transferTo(new File(path1));
     	mav = listCategory();
     	return mav;
     }

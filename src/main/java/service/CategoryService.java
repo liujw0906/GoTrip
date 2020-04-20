@@ -44,4 +44,9 @@ public class CategoryService implements CategoryInt {
         categoryMapper.insert(category);
         return categoryMapper.selectNew(category.getName());
     }
+
+	@Override
+	public Category getCategoryByName(String name) {
+		return categoryMapper.getCategoryByName(name);
+	}
 }

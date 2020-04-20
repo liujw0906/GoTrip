@@ -98,12 +98,23 @@ public class AdminController {
         Category category = new Category();
         category.setName(name);
         Integer cid = categoryService.insert(category);
-        String path1 = "C:\\Users\\70953\\github\\Gotrip\\src\\main\\webapp\\img\\category\\" + cid.toString() + ".jpg";
-        String path2 = "C:\\Users\\70953\\github\\Gotrip\\target\\Gotrip\\img\\category\\" + cid.toString() + ".jpg";
+//        String path1 = "D:\\WorkSpace-Idea\\zheng\\GoTrip\\target\\Gotrip\\img\\category\\" + cid.toString() + ".jpg";
+        String path1 = "/mnt/workspace/apache-tomcat-8.5.42/webapps/Gotrip/img/category/" + cid.toString() + ".jpg";
         filepath.transferTo(new File(path1));
-        FileUtils.copyFile(new File(path1), new File(path2));
+//        FileUtils.copyFile(new File(path1), new File(path2));
         mav = listCategory();
         return mav;
+    }
+    @RequestMapping(value = "/admin_category_update", produces = "text/html;charset=UTF-8")
+    @ResponseBody
+    public ModelAndView admin_category_update(@RequestParam("name") String name, @RequestParam("filepath") MultipartFile filepath) throws IOException {
+    	Category category = categoryService.getCategoryByName(name);
+    	Integer id =category.getId();
+    	category.setName(name);
+//    	String path1 = "D:\\WorkSpace-Idea\\zheng\\GoTrip\\target\\Gotrip\\img\\category\\" + id.toString() + ".jpg";
+//    	filepath.transferTo(new File(path1));
+    	mav = listCategory();
+    	return mav;
     }
 
     //查询所有订单

@@ -39,4 +39,6 @@ public interface CategoryMapper {
 
     @Select("select id from category where name=#{name}")
     Integer selectNew(String name);
+
+	Category getCategoryByName(@Param("name")String name);
 }

@@ -8,6 +8,8 @@ public interface CategoryInt {
     List<Category> listTwoCategory();
 
     Category getCategory(int id);
+    
+    Category getCategoryByName(String name);
 
     List<Category> listAll();
 

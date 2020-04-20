@@ -514,12 +514,18 @@ public class AdminController {
         int id = productService.getLastImage(pid);
         String uri = re.getSession().getServletContext().getRealPath("/");
 
-        String path = uri + "\\img";
+        String path = uri + "/img";
         if ("type_single".equals(type)) {
-            path += "\\productSingle\\";
+            path += "/productSingle/";
         } else {
-            path += "\\productDetail\\";
+            path += "/productDetail/";
         }
+//        String path = uri + "\\img";
+//        if ("type_single".equals(type)) {
+//        	path += "\\productSingle\\";
+//        } else {
+//        	path += "\\productDetail\\";
+//        }
         path += id + ".jpg";
         System.out.println("-------" + path);
         File targetFile = new File(path);

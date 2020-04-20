@@ -153,7 +153,7 @@ $(function(){
         <img src="img/productSingle/${p.firstProductImage.id}.jpg" class="bigImg">
         <div class="smallImageDiv">
             <c:forEach items="${p.productSingleImages}" var="pi">
-                <img src="img/productSingle_small/${pi.id}.jpg" bigImageURL="img/productSingle/${pi.id}.jpg" class="smallImage">
+                <img src="img/productSingle/${pi.id}.jpg" bigImageURL="img/productSingle/${pi.id}.jpg" class="smallImage">
             </c:forEach>
         </div>
         <div class="img4load hidden" ></div>

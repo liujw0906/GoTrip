@@ -4,32 +4,43 @@ import mapper.CategoryMapper;
 import model.Category;
 import model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service
-public class CategoryService implements CategoryInt{
+public class CategoryService implements CategoryInt {
 
     @Autowired
     CategoryMapper categoryMapper;
+
+    @Autowired
+    JdbcTemplate jdbcTemplate;
+
     @Override
-    public List<Category> listTwoCategory(){
+    public List<Category> listTwoCategory() {
         return categoryMapper.selectTwo();
     }
+
     @Override
-    public Category getCategory(int id){
+    public Category getCategory(int id) {
         return categoryMapper.selectByPrimaryKey(id);
     }
+
     @Override
-    public List<Category> listAll(){
+    public List<Category> listAll() {
         return categoryMapper.selectAll();
     }
+
     @Override
-    public void delete(int id){
-        categoryMapper.deleteByPrimaryKey(id);
+    public void delete(int id) {
+//        categoryMapper.deleteByPrimaryKey(id);
+        jdbcTemplate.execute(" delete from category where id = " + id);
     }
+
     @Override
-    public Integer insert(Category category){
+    public Integer insert(Category category) {
         categoryMapper.insert(category);
         return categoryMapper.selectNew(category.getName());
     }

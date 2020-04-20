@@ -36,4 +36,12 @@ public interface ProductInt {
     List<Productimage> listProductImage(int product_id);
 
     void updatePropertyValue(int id, String value);
+
+    Productimage getProductImageById(Integer id);
+
+    void admin_productImage_delete(Integer id);
+
+    void insertProductImage(Productimage productimage);
+
+    int getLastImage(Integer pid);
 }

@@ -131,7 +131,7 @@ $(function(){
 										<a title="点击查看原图" href="../img/productDetail/${pi.id}.jpg"><img height="50px" src="../img/productDetail/${pi.id}.jpg"></a>
 									</td>
 									<td><a deleteLink="true"
-										href="/admin_productImage_delete?id=${pi.id}"><span
+										href="admin_productImage_delete?id=${pi.id}"><span
 											class=" 	glyphicon glyphicon-trash"></span></a></td>
 								</tr>
 							</c:forEach>

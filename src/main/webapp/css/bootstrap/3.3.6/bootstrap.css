@@ -4893,6 +4893,8 @@ a.label:focus {
 }
 .label-info {
   background-color: #5bc0de;
+  margin-bottom: 20px;
+  display: inline-block;
 }
 .label-info[href]:hover,
 .label-info[href]:focus {

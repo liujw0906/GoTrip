@@ -97,13 +97,16 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="model.Productimage">
-    insert into ProductImage (id, pid, type
+  <insert id="insert" parameterType="model.Productimage" useGeneratedKeys="true" keyProperty="id">
+    <selectKey keyProperty="id" resultType="int" order="AFTER">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into ProductImage (pid, type
       )
-    values (#{id,jdbcType=INTEGER}, #{pid,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}
+    values ( #{pid,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="model.Productimage">
+  <insert id="insertSelective" parameterType="model.Productimage" useGeneratedKeys="true" keyProperty="id">
     insert into ProductImage
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">

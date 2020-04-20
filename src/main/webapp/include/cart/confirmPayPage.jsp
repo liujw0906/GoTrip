@@ -26,7 +26,7 @@
 			</thead>
 			<c:forEach items="${o.orderItems}" var="oi">
 				<tr>
-					<td><img width="50px" src="img/productSingle_middle/${oi.product.firstProductImage.id}.jpg"></td>
+					<td><img width="50px" src="img/productSingle/${oi.product.firstProductImage.id}.jpg"></td>
 					<td class="confirmPayOrderItemProductLink">
 						<a href="#nowhere">${oi.product.name}</a>
 					</td>

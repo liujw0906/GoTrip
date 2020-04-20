@@ -105,7 +105,7 @@ $(function(){
 									<c:forEach items="${o.orderItems}" var="oi">
 										<tr>
 											<td align="left">
-												<img width="40px" height="40px" src="img/productSingle_middle/${oi.product.firstProductImage.id}.jpg">
+												<img width="40px" height="40px" src="img/productSingle/${oi.product.firstProductImage.id}.jpg">
 											</td>
 											
 											<td>

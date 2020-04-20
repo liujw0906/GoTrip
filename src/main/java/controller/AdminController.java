@@ -107,7 +107,7 @@ public class AdminController {
     }
     @RequestMapping(value = "/admin_category_update", produces = "text/html;charset=UTF-8")
     @ResponseBody
-    public ModelAndView admin_category_update(@RequestParam("name") String name, @RequestParam("name") Integer id,@RequestParam("filepath") MultipartFile filepath) throws IOException {
+    public ModelAndView admin_category_update(@RequestParam("name") String name, @RequestParam("id") Integer id,@RequestParam("filepath") MultipartFile filepath) throws IOException {
     	Category category = categoryService.getCategory(id);
     	category.setName(name);
     	categoryService.update(category);
